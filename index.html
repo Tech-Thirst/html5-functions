@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Web storage</h1>
+      <div>
+        <h3>Local Storage</h3>
+        <form>
+          <label>First Name: <input type="text" id="fname" /></label>
+          <button type="button" class="save" onclick="saveLocalStorage()">
+            Save Name
+          </button>
+          <button type="button" class="access" onclick="getLocalStorage()">
+            Get Name
+          </button>
+        </form>
+      </div>
+
+      <div>
+        <h3>Session Storage</h3>
+        <form>
+          <label>First Name: <input type="text" id="first_name" /></label><br />
+          <label>Last Name: <input type="text" id="last_name" /></label><br />
+          <button type="button" class="save" onclick="saveSessionStorage()">
+            Save Name
+          </button>
+          <button type="button" class="access" onclick="getSessionStorage()">
+            Get Name
+          </button>
+        </form>
+      </div>
+
+      <div>
+        <h3>Clear Storage</h3>
+        <button type="button" class="access" onclick="clearStorage()">
+          Clear All Storage
+        </button>
+      </div>
+
+      <div>
+        <h3>Canvas</h3>
+        <div>
+          <h5>Drawing Line</h5>
+          <canvas id="myLine" width="300" height="200"></canvas>
+        </div>
+        <div>
+          <h5>Drawing Rect</h5>
+          <canvas id="myRect" width="300" height="200"></canvas>
+        </div>
+        <div>
+          <h5>Drawing circle</h5>
+          <canvas id="myCircle" width="300" height="200"></canvas>
+        </div>
+        <div>
+          <h5>Drawing arc</h5>
+          <canvas id="myArc" width="300" height="200"></canvas>
+        </div>
+      </div>
+      <div>
+        <h3>Geolocation</h3>
+        <h5>Show Position</h5>
+        <div id="showPos">
+          <!--Position information will be inserted here-->
+        </div>
+        <button type="button" onclick="showPosition();">Show Position</button>
+        <h5>Watch Position</h5>
+        <button type="button" onclick="watchPosition()">Watch Position</button>
+        <button type="button" id="toggleWatchBtn">Start Watching</button>
+        <button type="button" onclick="clearWatch()">Clear Watch</button>
+        <div id="watchPos">
+          <!--Position information will be inserted here-->
+        </div>
+      </div>
+      <div>
+        <h3>Microdata</h3>
+        <div itemscope>
+          My birthday is:
+          <time itemprop="birthday" datetime="1971-05-08"> Aug 5th 1971 </time>
+        </div>
+      </div>
+      <div>
+        <h3>Drag and Drop</h3>
+
+        <div>Try to move the purple box into the pink box.</div>
+        <div id="boxA" draggable="true" ondragstart="return dragStart(event)">
+          <p>Drag Me</p>
+        </div>
+        <div
+          id="boxB"
+          ondragenter="return dragEnter(event)"
+          ondrop="return dragDrop(event)"
+          ondragover="return dragOver(event)"
+        >
+          Dustbin
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
